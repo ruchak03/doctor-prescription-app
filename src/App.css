@@ -1,0 +1,148 @@
+/* Global */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: #fff;
+}
+
+/* Centered container */
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/* Glassmorphism card */
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
+  padding: 25px 20px;
+  margin: 20px auto;
+  width: 95%;
+  max-width: 650px;
+  border: 1px solid rgba(255,255,255,0.1);
+  animation: slideUp 0.9s ease forwards;
+  box-sizing: border-box;
+}
+
+
+
+/* Inputs */
+.input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  margin-bottom: 12px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  transition: 0.3s;
+}
+
+.input:focus {
+  background: rgba(255,255,255,0.2);
+  transform: scale(1.03);
+}
+
+
+
+input::placeholder {
+  color: #bdbdbd;
+}
+
+/* Gradient Button */
+.btn {
+  padding: 12px 20px;
+  background: linear-gradient(90deg, #fc466b, #3f5efb);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px #fc466b;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Preview Page */
+.preview-card {
+  background: white;
+  color: black;
+  padding: 30px;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+@media print {
+  .btn {
+    display: none;
+  }
+}
+/* ========== Page Fade In ========== */
+.page {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0px); }
+}
+
+/* ========== Card Slide-Up ========== */
+.card {
+  animation: slideUp 0.9s ease forwards;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========== Input Focus Glow ========== */
+input:focus {
+  border-color: #7ab6ff;
+  box-shadow: 0 0 10px rgba(122, 182, 255, 0.6);
+  transition: 0.25s;
+}
+
+/* ========== Button Hover Glow ========== */
+.btn {
+  transition: 0.25s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 112, 212, 0.6),
+              0 0 25px rgba(63, 94, 251, 0.4);
+}
+
+.doctor-header {
+  margin-bottom: 10px;
+  padding: 10px 0;
+  color: #222;
+}
+
+.doctor-header h3 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.doctor-header p {
+  margin: 2px 0;
+  opacity: 0.7;
+}
