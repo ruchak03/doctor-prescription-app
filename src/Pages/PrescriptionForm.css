@@ -1,72 +1,79 @@
-/* Center page */
+/* Full Page Wrapper */
 .form-wrapper {
-  width: 100vw;
-  min-height: 100vh;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 30px;
 }
 
-/* Beautiful Card Box */
+/* Title */
+.title {
+  font-size: 42px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Card Box */
 .card {
+  width: 100%;
   background: rgba(255, 255, 255, 0.08);
-  padding: 30px;
-  width: 80%;
-  max-width: 800px;
-  border-radius: 20px;
+  padding: 25px;
+  border-radius: 15px;
   margin-bottom: 25px;
   backdrop-filter: blur(10px);
-  transition: 0.3s ease;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  color: white;
 }
 
-.card:hover {
-  transform: translateY(-3px);
-  background: rgba(255, 255, 255, 0.12);
-}
-
-/* Card Title */
+/* Headings inside card */
 .card h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #fff;
 }
 
-/* Input fields */
+/* Input Row */
 .input-row {
   display: flex;
+  width: 100%;
   gap: 15px;
-  margin-bottom: 15px;
 }
 
+/* Inputs */
 .input-row input {
   flex: 1;
   padding: 12px;
   border-radius: 10px;
   border: none;
-  outline: none;
-  background: rgba(255, 255, 255, 0.2);
-  color: #fff;
+  background: rgba(255, 255, 255, 0.18);
+  color: white;
 }
 
-/* Full-width button row */
+/* Placeholder color */
+.input-row input::placeholder {
+  color: #ddd;
+}
+
+/* Buttons */
 .btn-center {
   text-align: center;
 }
 
-/* Gradient button */
 .btn {
-  background: linear-gradient(90deg, #ff4b2b, #3b5bff);
-  color: #fff;
+  background: linear-gradient(to right, #ff416c, #5f27cd);
+  padding: 12px 30px;
   border: none;
-  padding: 10px 22px;
-  border-radius: 25px;
+  color: white;
+  border-radius: 30px;
   cursor: pointer;
   font-size: 16px;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 .btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }

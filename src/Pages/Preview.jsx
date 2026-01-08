@@ -1,25 +1,29 @@
 import { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 
 function Preview() {
+  const { id } = useParams(); // Get prescription ID from URL
+  const navigate = useNavigate();
+
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    const stored = localStorage.getItem("prescription");
+    const all = JSON.parse(localStorage.getItem("prescriptions")) || [];
+    const found = all.find((p) => p.id === id);
 
-    if (stored) {
-      try {
-        const parsed = JSON.parse(stored);
-        setData(parsed);
-      } catch (error) {
-        console.error("JSON Parse Error:", error);
-      }
+    if (!found) {
+      alert("Prescription not found!");
+      navigate("/create");
+      return;
     }
-  }, []);
+
+    setData(found);
+  }, [id]);
 
   if (!data) {
     return (
       <h2 style={{ color: "white", textAlign: "center", marginTop: "40px" }}>
-        No Data Found
+        Loading...
       </h2>
     );
   }
@@ -89,6 +93,18 @@ function Preview() {
           style={{ marginTop: "20px" }}
         >
           Print Prescription
+        </button>
+
+        {/* Back Button */}
+        <button
+          className="btn"
+          onClick={() => navigate("/list")}
+          style={{
+            marginTop: "10px",
+            background: "#555",
+          }}
+        >
+          Back to Prescriptions
         </button>
       </div>
     </div>

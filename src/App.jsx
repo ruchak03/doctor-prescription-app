@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./Pages/Home.jsx";
-import PrescriptionForm from "./Pages/PrescriptionForm.jsx";
-import Preview from "./Pages/Preview.jsx";
-import Login from "./Pages/Login.jsx";
-import Signup from "./Pages/Signup.jsx";   // <-- FIXED
 
-import "./App.css";
+import Home from "./Pages/Home";
+import PrescriptionForm from "./Pages/PrescriptionForm";
+import Preview from "./Pages/Preview";
+import Login from "./Pages/Login";
+import Signup from "./Pages/Signup";
+import PrescriptionList from "./Pages/PrescriptionList"; // NEW PAGE
 
 function App() {
   return (
@@ -13,9 +13,15 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/create" element={<PrescriptionForm />} />
-        <Route path="/preview" element={<Preview />} />
+
+        {/* MUST HAVE ID */}
+        <Route path="/preview/:id" element={<Preview />} />
+
         <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />   {/* <-- FIXED */}
+        <Route path="/signup" element={<Signup />} />
+
+        {/* New list route */}
+        <Route path="/list" element={<PrescriptionList />} />
       </Routes>
     </Router>
   );

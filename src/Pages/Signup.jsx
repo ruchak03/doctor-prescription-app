@@ -18,16 +18,14 @@ function Signup() {
       return;
     }
 
-    // Save doctor account
     localStorage.setItem("doctorAccount", JSON.stringify(form));
-
     alert("Signup successful! Please login.");
     navigate("/login");
   }
 
   return (
-    <div className="page" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-      <div className="card" style={{ width: "400px", padding: "25px", textAlign: "center" }}>
+    <div className="page">
+      <div className="card" style={{ maxWidth: "400px", textAlign: "center" }}>
         <h2>Doctor Signup</h2>
 
         <input

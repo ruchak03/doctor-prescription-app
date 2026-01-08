@@ -10,16 +10,10 @@ function Login() {
 
   function handleLogin() {
     const saved = JSON.parse(localStorage.getItem("doctorAccount"));
-
-    if (!saved) {
-      setError("No doctor account found. Please sign up first.");
-      return;
-    }
+    if (!saved) return setError("No doctor account found. Please sign up.");
 
     if (email === saved.email && password === saved.password) {
       localStorage.setItem("doctorLoggedIn", "true");
-
-      // Save doctor details separately for prescription
       localStorage.setItem(
         "doctorDetails",
         JSON.stringify({
@@ -36,19 +30,19 @@ function Login() {
   }
 
   return (
-    <div className="page" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-      <div className="card" style={{ width: "350px", padding: "30px", textAlign: "center" }}>
+    <div className="page">
+      <div className="card" style={{ maxWidth: "350px", textAlign: "center" }}>
         <h2>Doctor Login</h2>
 
         <input
-          className="input"
+          className="input-row input"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
 
         <input
-          className="input"
+          className="input-row input"
           type="password"
           placeholder="Password"
           value={password}

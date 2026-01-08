@@ -131,18 +131,62 @@ input:focus {
               0 0 25px rgba(63, 94, 251, 0.4);
 }
 
-.doctor-header {
-  margin-bottom: 10px;
-  padding: 10px 0;
-  color: #222;
+.center-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.doctor-header h3 {
-  margin: 0;
-  font-size: 22px;
+.home-container {
+  text-align: center;
+  max-width: 700px;
 }
 
-.doctor-header p {
-  margin: 2px 0;
-  opacity: 0.7;
+.main-title {
+  font-size: 48px;
+  margin-bottom: 15px;
+  font-weight: 600;
 }
+
+.subtitle {
+  opacity: 0.9;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.links a {
+  color: #fff;
+  opacity: 0.9;
+}
+
+/* Home Page Spacing Fix */
+
+.home-container {
+  text-align: center;
+  margin-top: 90px;
+}
+
+.home-actions {
+  margin-top: 40px;
+}
+
+.login-link {
+  margin-top: 22px;
+  font-size: 18px;
+}
+
+.signup-link {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.links a {
+  color: white;
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
